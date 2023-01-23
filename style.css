@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+
+body {
+   background-color: rgb(85,0,170);
+   font-family: 'Baumans', cursive;
+}
+
+.zircon {
+    background-color: #00849D;
+}
+
+.floral {
+    background-color: #91B6D8;
+}
+
+.yale {
+    background-color: #03346A;
+}
+
+.kitchen {
+    background-color: #8AB5BD;
+}
+
+.cashmere {
+    background-color: #63779D;
+}
+
+.miami {
+    background-color: #54C3EA;
+}
+
+.infantry {
+    background-color: #30506D;
+}
+
+
+
+
+
+
+
+/****************************/
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+h1 {
+    font-size: 36px;
+}
+
+table {
+    width: calc(30px * 10);
+    text-align: center;
+    background-color:rgb(2, 1, 13); 
+
+}
+
+td {
+    padding: 15px;
+    margin: 0;
+    background-color: rgb(124, 124, 124);
+}
+
+.board {
+    display: flex;
+    background-color: rgb(124, 124, 124);
+    padding: 10px;
+    box-shadow: 8px 8px 24px 0px rgb(40, 21, 55);
+    
+    
+}
+
+.board__details {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.board__next {
+    margin: 20px 0;
+}
+
+
+
+
