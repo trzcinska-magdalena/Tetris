@@ -1,0 +1,103 @@
+let colSt = 3;
+let rowSt = 1;
+let mmmm = 0;
+
+let random;
+
+//start();
+
+function draw(blockType, i) {
+    for(let p = 0; p < blockType[i].length; p++) {
+        let r = parseInt(blockType[i][p].row) + rowSt;
+        row = document.getElementById('tr-' + r);
+        console.log(row);
+        row = Array.from(row.children);
+        row[blockType[i][p].col + colSt].className = nameOfStyle[random];
+    }
+}
+
+function clear(blockType, i) {
+    for(let p = 0; p < blockType[i].length; p++) {
+        let r = parseInt(blockType[i][p].row) + rowSt;
+        console.log(r);
+        row = document.getElementById('tr-' + r);
+        console.log(row);
+        row = Array.from(row.children);
+        row[blockType[i][p].col + colSt].className = '';
+    }
+}
+
+
+function check(blockType, i) {
+    if(rowSt == 13) return false;
+
+    const unique = blockType[i].filter(
+        (obj, index) =>
+        blockType[i].findIndex((item) => item.col === obj.col) === index
+      );
+      console.log(unique);
+
+    for(let p = 0; p < unique.length; p++) {
+        let r = parseInt(unique[p].row)+rowSt+1;
+        row = document.getElementById('tr-' + r);
+        row = Array.from(row.children);
+        if(row[unique[p].col + colSt].className != '') {
+            return false;
+        }
+    }
+    return true;
+}
+
+function isTheLineBusy (nameOfId) {
+    let row = document.getElementById(nameOfId);
+    return Array.from(row.children).find(el => el.className == '') ? false : true;
+}
+
+function clearRow(nameOfId) {
+    let row = document.getElementById(nameOfId);
+    Array.from(row.children).forEach(el => el.className = '');
+}
+
+function start() {
+    random = Math.floor(Math.random() * nameOfStyle.length);
+    draw(block_I, mmmm);
+
+    let timer = setInterval(() => {
+        console.log('timer ' + mmmm)
+        if(check(block_I, mmmm)) {
+            clear(block_I, mmmm);
+            rowSt++;
+            draw(block_I, mmmm);
+        } else {
+            console.log('stop');
+            rowSt = 1;
+            colSt = 3;
+
+            let blockRandom = Math.floor(Math.random() * blocks.length);
+            timerrrr(blocks[blockRandom]);
+            clearInterval(timer);
+        }
+    }, 1000);
+}
+
+function timerrrr(block) {
+    let timer = setInterval(() => {
+        console.log('timer ' + mmmm)
+        if(check(block, mmmm)) {
+            clear(block, mmmm);
+            rowSt++;
+            draw(block, mmmm);
+            
+        } else {
+            console.log('stop');
+            rowSt = 1;
+            colSt = 3;
+            mmmm = 0;
+
+            let blockRandom = Math.floor(Math.random() * blocks.length);
+            timerrrr(blocks[blockRandom]);
+
+            clearInterval(timer);
+        }
+    }, 1000);
+}
