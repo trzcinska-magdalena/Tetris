@@ -53,11 +53,6 @@ function isTheLineBusy (nameOfId) {
     return Array.from(row.children).find(el => el.className == '') ? false : true;
 }
 
-function clearRow(nameOfId) {
-    let row = document.getElementById(nameOfId);
-    Array.from(row.children).forEach(el => el.className = '');
-}
-
 function start() {
     random = Math.floor(Math.random() * nameOfStyle.length);
     draw(block_I, mmmm);

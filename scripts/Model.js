@@ -1,4 +1,4 @@
-class Model {
+export class Model {
     constructor() {
         const block_I = [
             [{'col': 0,'row': 0}, 

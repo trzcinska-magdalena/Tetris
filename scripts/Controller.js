@@ -1,3 +1,6 @@
+import { Model } from "./Model.js";
+import { View } from "./View.js";
+
 class Controller {
     constructor(model, view) {
         this.model = model;
@@ -5,11 +8,15 @@ class Controller {
 
         this.isPlaying = false;
 
-        document.addEventListener("keydown", this.handleKeyDown(this));
+        document.addEventListener("keydown", this.handleKeyDown.bind(this));
+
+
+        this.button = document.getElementsByClassName('btn')[0];
+        this.button.addEventListener("click", this.start.bind(this));
     }
 
-    startTimer() {
-        
+    start() {
+        this.view.uploadPanel(0, 0);
     }
 
     handleKeyDown(event) {

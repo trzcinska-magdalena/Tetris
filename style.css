@@ -61,6 +61,7 @@ td {
 }
 
 .board {
+    margin: 20px 0;
     display: flex;
     background-color: rgb(124, 124, 124);
     padding: 10px;
@@ -87,6 +88,11 @@ td {
     padding: 6px;
 }
 
-
-
-
+.btn {
+    padding: 8px;
+    font-size: 24px;
+    border: none;
+    font-family: 'Baumans', cursive;
+    background-color: transparent;
+    cursor: pointer;
+}
