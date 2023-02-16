@@ -6,55 +6,8 @@ let random;
 
 //start();
 
-function draw(blockType, i) {
-    for(let p = 0; p < blockType[i].length; p++) {
-        let r = parseInt(blockType[i][p].row) + rowSt;
-        row = document.getElementById('tr-' + r);
-        console.log(row);
-        row = Array.from(row.children);
-        row[blockType[i][p].col + colSt].className = nameOfStyle[random];
-    }
-}
-
-function clear(blockType, i) {
-    for(let p = 0; p < blockType[i].length; p++) {
-        let r = parseInt(blockType[i][p].row) + rowSt;
-        console.log(r);
-        row = document.getElementById('tr-' + r);
-        console.log(row);
-        row = Array.from(row.children);
-        row[blockType[i][p].col + colSt].className = '';
-    }
-}
-
-
-function check(blockType, i) {
-    if(rowSt == 13) return false;
-
-    const unique = blockType[i].filter(
-        (obj, index) =>
-        blockType[i].findIndex((item) => item.col === obj.col) === index
-      );
-      console.log(unique);
-
-    for(let p = 0; p < unique.length; p++) {
-        let r = parseInt(unique[p].row)+rowSt+1;
-        row = document.getElementById('tr-' + r);
-        row = Array.from(row.children);
-        if(row[unique[p].col + colSt].className != '') {
-            return false;
-        }
-    }
-    return true;
-}
-
-function isTheLineBusy (nameOfId) {
-    let row = document.getElementById(nameOfId);
-    return Array.from(row.children).find(el => el.className == '') ? false : true;
-}
-
 function start() {
-    random = Math.floor(Math.random() * nameOfStyle.length);
+    
     draw(block_I, mmmm);
 
     let timer = setInterval(() => {

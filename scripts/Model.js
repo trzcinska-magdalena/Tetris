@@ -1,6 +1,6 @@
 export class Model {
     constructor() {
-        const block_I = [
+        this.block_I = [
             [{'col': 0,'row': 0}, 
             {'col': 1, 'row': 0}, 
             {'col': 2, 'row': 0}, 
@@ -22,7 +22,7 @@ export class Model {
             {'col': 1, 'row': 1}],
         ];
         
-        const block_O = [
+        this.block_O = [
             [{'col': 0, 'row': 1},
             {'col': 0,'row': 0},  
             {'col': 1, 'row': 1}, 
@@ -44,7 +44,7 @@ export class Model {
             {'col': 1, 'row': 0}]
         ];
         
-        const block_T = [
+        this.block_T = [
             [{'col': 1,'row': 1}, 
             {'col': 1, 'row': 0},
             {'col': 0, 'row': 1}, 
@@ -66,7 +66,7 @@ export class Model {
             {'col': 1, 'row': 0}],
         ];
         
-        const block_S = [
+        this.block_S = [
             [{'col': 1,'row': 1}, 
             {'col': 0, 'row': 1}, 
             {'col': 1, 'row': 0}, 
@@ -88,13 +88,13 @@ export class Model {
             {'col': 1, 'row': 0}],
         ];
         
-        let block_Z = [[1,1,0],
+        this.block_Z = [[1,1,0],
                         [0,1,1]];
-        let block_J = [[1,0,0],
+        this.block_J = [[1,0,0],
                         [1,1,1]];
-        let block_L = [[0,0,1],
+        this.block_L = [[0,0,1],
                         [1,1,1]];
         
-        let blocks = [block_I, block_O, block_T, block_S];
+        this.blocks = [this.block_I, this.block_O, this.block_T, this.block_S];
     }
 }
